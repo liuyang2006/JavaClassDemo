@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.lang.Object</OriginalElement>
+  <nodes>
+    <node x="244.0" y="80.0">java.lang.Cloneable</node>
+    <node x="153.61363636363637" y="280.0">java.util.Properties</node>
+    <node x="360.0" y="80.0">java.util.Map</node>
+    <node x="302.1931818181818" y="200.0">java.util.HashMap</node>
+    <node x="393.0" y="0.0">java.lang.Object</node>
+    <node x="414.1931818181818" y="200.0">java.util.WeakHashMap</node>
+    <node x="0.0" y="80.0">java.util.Dictionary</node>
+    <node x="153.61363636363637" y="200.0">java.util.Hashtable</node>
+    <node x="119.0" y="80.0">java.io.Serializable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.Hashtable" target="java.util.Dictionary">
+      <point x="-36.375" y="-15.0" />
+      <point x="165.73863636363637" y="180.0" />
+      <point x="49.5" y="180.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.util.Map">
+      <point x="11.5" y="-15.0" />
+      <point x="359.6931818181818" y="170.0" />
+      <point x="390.0" y="170.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Dictionary" target="java.lang.Object">
+      <point x="0.0" y="-15.0" />
+      <point x="49.5" y="60.0" />
+      <point x="405.5" y="60.0" />
+      <point x="-25.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.util.Map">
+      <point x="36.375" y="-15.0" />
+      <point x="238.48863636363637" y="160.0" />
+      <point x="370.0" y="160.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Properties" target="java.util.Hashtable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.lang.Cloneable">
+      <point x="12.125" y="-15.0" />
+      <point x="214.23863636363637" y="150.0" />
+      <point x="268.0" y="150.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="java.util.WeakHashMap" target="java.util.Map">
+      <point x="-31.25" y="-15.0" />
+      <point x="445.4431818181818" y="170.0" />
+      <point x="410.0" y="170.0" />
+      <point x="20.0" y="15.0" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.lang.Object">
+      <point x="34.5" y="-15.0" />
+      <point x="382.6931818181818" y="180.0" />
+      <point x="472.42045454545456" y="180.0" />
+      <point x="472.42045454545456" y="60.0" />
+      <point x="430.5" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.lang.Cloneable">
+      <point x="-11.5" y="-15.0" />
+      <point x="336.6931818181818" y="130.0" />
+      <point x="316.0" y="130.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.io.Serializable">
+      <point x="-34.5" y="-15.0" />
+      <point x="313.6931818181818" y="140.0" />
+      <point x="197.75" y="140.0" />
+      <point x="26.25" y="15.0" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.io.Serializable">
+      <point x="-12.125" y="-15.0" />
+      <point x="189.98863636363637" y="170.0" />
+      <point x="145.25" y="170.0" />
+      <point x="-26.25" y="15.0" />
+    </edge>
+    <edge source="java.util.WeakHashMap" target="java.lang.Object">
+      <point x="31.25" y="-15.0" />
+      <point x="507.9431818181818" y="180.0" />
+      <point x="492.7386363636364" y="180.0" />
+      <point x="492.7386363636364" y="50.0" />
+      <point x="455.5" y="50.0" />
+      <point x="25.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.7000000000000006" x="270.0" y="154.99999999999997" />
+  <SelectedNodes>
+    <node>java.util.WeakHashMap</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

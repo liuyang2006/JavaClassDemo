@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.util.Vector</OriginalElement>
+  <nodes>
+    <node x="501.24305555555554" y="170.0">java.util.Arrays</node>
+    <node x="184.50617283950623" y="170.0">java.lang.CharSequence</node>
+    <node x="372.1666666666667" y="170.0">java.lang.Appendable</node>
+    <node x="876.0061728395062" y="80.0">java.util.Collection</node>
+    <node x="812.7430555555555" y="250.0">java.util.AbstractList</node>
+    <node x="884.5061728395062" y="0.0">java.lang.Iterable</node>
+    <node x="457.74305555555554" y="250.0">java.io.Serializable</node>
+    <node x="663.7430555555555" y="250.0">java.util.RandomAccess</node>
+    <node x="935.7430555555555" y="170.0">java.util.List</node>
+    <node x="764.7430555555555" y="170.0">java.util.AbstractCollection</node>
+    <node x="766.0902777777778" y="340.0">java.util.Vector</node>
+    <node x="305.34027777777777" y="340.0">java.lang.StringBuffer</node>
+    <node x="582.7430555555555" y="250.0">java.util.Map</node>
+    <node x="270.74305555555554" y="250.0">java.lang.AbstractStringBuilder</node>
+    <node x="140.74305555555554" y="250.0">java.lang.Comparable</node>
+    <node x="412.99305555555554" y="80.0">java.lang.Object</node>
+    <node x="132.34027777777777" y="340.0">java.lang.String</node>
+    <node x="0.0" y="170.0">java.util.Collections</node>
+    <node x="603.7430555555555" y="170.0">java.util.Dictionary</node>
+    <node x="553.5895061728395" y="340.0">java.util.Hashtable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.Hashtable" target="java.util.Dictionary">
+      <point x="32.33333333333337" y="-15.0" />
+      <point x="634.4228395061729" y="320.0" />
+      <point x="653.2430555555555" y="320.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.StringBuffer" target="java.lang.AbstractStringBuilder">
+      <point x="0.0" y="-15.0" />
+      <point x="359.34027777777777" y="300.0" />
+      <point x="354.24305555555554" y="300.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Vector" target="java.io.Serializable">
+      <point x="-27.75" y="-15.0" />
+      <point x="775.3402777777778" y="310.0" />
+      <point x="549.6180555555555" y="310.0" />
+      <point x="39.375" y="15.0" />
+    </edge>
+    <edge source="java.lang.AbstractStringBuilder" target="java.lang.Object">
+      <point x="0.0" y="-15.0" />
+      <point x="354.24305555555554" y="225.0" />
+      <point x="353.1666666666667" y="225.0" />
+      <point x="353.1666666666667" y="150.0" />
+      <point x="444.24305555555554" y="150.0" />
+      <point x="-6.25" y="15.0" />
+    </edge>
+    <edge source="java.util.List" target="java.util.Collection">
+      <point x="0.0" y="-15.0" />
+      <point x="964.2430555555555" y="150.0" />
+      <point x="949.5061728395062" y="150.0" />
+      <point x="24.5" y="15.0" />
+    </edge>
+    <edge source="java.util.AbstractList" target="java.util.List">
+      <point x="27.5" y="-15.0" />
+      <point x="895.2430555555555" y="225.0" />
+      <point x="949.9930555555555" y="225.0" />
+      <point x="-14.25" y="15.0" />
+    </edge>
+    <edge source="java.lang.AbstractStringBuilder" target="java.lang.CharSequence">
+      <point x="-55.66666666666663" y="-15.0" />
+      <point x="298.5763888888889" y="225.0" />
+      <point x="286.17283950617286" y="225.0" />
+      <point x="40.66666666666663" y="15.0" />
+    </edge>
+    <edge source="java.util.Collection" target="java.lang.Iterable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.AbstractStringBuilder" target="java.lang.Appendable">
+      <point x="55.666666666666686" y="-15.0" />
+      <point x="409.9097222222223" y="225.0" />
+      <point x="426.1666666666667" y="225.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.AbstractCollection" target="java.util.Collection">
+      <point x="37.75" y="-15.0" />
+      <point x="877.9930555555555" y="150.0" />
+      <point x="900.5061728395062" y="150.0" />
+      <point x="-24.5" y="15.0" />
+    </edge>
+    <edge source="java.util.Collections" target="java.lang.Object">
+      <point x="0.0" y="-15.0" />
+      <point x="52.5" y="130.0" />
+      <point x="419.24305555555554" y="130.0" />
+      <point x="-31.25" y="15.0" />
+    </edge>
+    <edge source="java.util.Vector" target="java.util.AbstractList">
+      <point x="9.25" y="-15.0" />
+      <point x="812.3402777777778" y="310.0" />
+      <point x="867.7430555555555" y="310.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.StringBuffer" target="java.io.Serializable">
+      <point x="36.0" y="-15.0" />
+      <point x="395.34027777777777" y="320.0" />
+      <point x="497.11805555555554" y="320.0" />
+      <point x="-13.125" y="15.0" />
+    </edge>
+    <edge source="java.util.AbstractCollection" target="java.lang.Object">
+      <point x="-37.75" y="-15.0" />
+      <point x="802.4930555555555" y="130.0" />
+      <point x="481.74305555555554" y="130.0" />
+      <point x="31.25" y="15.0" />
+    </edge>
+    <edge source="java.util.Vector" target="java.util.List">
+      <point x="27.75" y="-15.0" />
+      <point x="830.8402777777778" y="320.0" />
+      <point x="978.4930555555555" y="320.0" />
+      <point x="14.25" y="15.0" />
+    </edge>
+    <edge source="java.util.Dictionary" target="java.lang.Object">
+      <point x="0.0" y="-15.0" />
+      <point x="653.2430555555555" y="140.0" />
+      <point x="469.24305555555554" y="140.0" />
+      <point x="18.75" y="15.0" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.util.Map">
+      <point x="0.0" y="-15.0" />
+      <point x="602.0895061728395" y="320.0" />
+      <point x="612.7430555555555" y="320.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.StringBuffer" target="java.lang.CharSequence">
+      <point x="-36.0" y="-15.0" />
+      <point x="323.34027777777777" y="300.0" />
+      <point x="260.24305555555554" y="300.0" />
+      <point x="260.24305555555554" y="225.0" />
+      <point x="245.50617283950623" y="225.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Arrays" target="java.lang.Object">
+      <point x="0.0" y="-15.0" />
+      <point x="538.2430555555555" y="150.0" />
+      <point x="456.74305555555554" y="150.0" />
+      <point x="6.25" y="15.0" />
+    </edge>
+    <edge source="java.lang.String" target="java.io.Serializable">
+      <point x="26.625" y="-15.0" />
+      <point x="194.46527777777777" y="310.0" />
+      <point x="470.86805555555554" y="310.0" />
+      <point x="-39.375" y="15.0" />
+    </edge>
+    <edge source="java.util.AbstractList" target="java.util.AbstractCollection">
+      <point x="-27.5" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Vector" target="java.util.RandomAccess">
+      <point x="-9.25" y="-15.0" />
+      <point x="793.8402777777778" y="300.0" />
+      <point x="728.2430555555555" y="300.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.String" target="java.lang.Comparable">
+      <point x="8.875" y="-15.0" />
+      <point x="176.71527777777777" y="300.0" />
+      <point x="195.24305555555554" y="300.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.io.Serializable">
+      <point x="-32.33333333333337" y="-15.0" />
+      <point x="569.7561728395061" y="320.0" />
+      <point x="523.3680555555555" y="320.0" />
+      <point x="13.125" y="15.0" />
+    </edge>
+    <edge source="java.lang.String" target="java.lang.Object">
+      <point x="-26.625" y="-15.0" />
+      <point x="141.21527777777777" y="320.0" />
+      <point x="115.5" y="320.0" />
+      <point x="115.5" y="140.0" />
+      <point x="431.74305555555554" y="140.0" />
+      <point x="-18.75" y="15.0" />
+    </edge>
+    <edge source="java.lang.String" target="java.lang.CharSequence">
+      <point x="-8.875" y="-15.0" />
+      <point x="158.96527777777777" y="310.0" />
+      <point x="130.24305555555554" y="310.0" />
+      <point x="130.24305555555554" y="225.0" />
+      <point x="204.8395061728396" y="225.0" />
+      <point x="-40.66666666666663" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1479644775390625" x="499.215291162123" y="193.86975130594288" />
+  <SelectedNodes>
+    <node>java.util.List</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

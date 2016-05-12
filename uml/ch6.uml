@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.lang.ArrayIndexOutOfBoundsException</OriginalElement>
+  <nodes>
+    <node x="522.4880952380952" y="80.0">java.lang.Throwable</node>
+    <node x="903.8214285714286" y="240.0">java.awt.AWTError</node>
+    <node x="340.0" y="320.0">java.lang.IndexOutOfBoundsException</node>
+    <node x="868.75" y="160.0">java.lang.Error</node>
+    <node x="120.0" y="240.0">java.io.IOException</node>
+    <node x="558.8214285714286" y="240.0">java.lang.RuntimeException</node>
+    <node x="323.5" y="400.0">java.lang.ArrayIndexOutOfBoundsException</node>
+    <node x="200.0" y="320.0">java.io.EOFException</node>
+    <node x="0.0" y="320.0">java.io.FileNotFoundException</node>
+    <node x="757.0" y="320.0">java.lang.NullPointerException</node>
+    <node x="361.48809523809524" y="160.0">java.lang.Exception</node>
+    <node x="519.4880952380952" y="0.0">java.io.Serializable</node>
+    <node x="726.8214285714286" y="240.0">java.lang.VirtualMachineError</node>
+    <node x="575.0" y="320.0">java.lang.ArithmeticException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.EOFException" target="java.io.IOException">
+      <point x="0.0" y="-15.0" />
+      <point x="260.0" y="295.0" />
+      <point x="202.5" y="295.0" />
+      <point x="27.5" y="15.0" />
+    </edge>
+    <edge source="java.io.FileNotFoundException" target="java.io.IOException">
+      <point x="0.0" y="-15.0" />
+      <point x="90.0" y="295.0" />
+      <point x="147.5" y="295.0" />
+      <point x="-27.5" y="15.0" />
+    </edge>
+    <edge source="java.lang.ArrayIndexOutOfBoundsException" target="java.lang.IndexOutOfBoundsException">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Throwable" target="java.io.Serializable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.IOException" target="java.lang.Exception">
+      <point x="0.0" y="-15.0" />
+      <point x="175.0" y="215.0" />
+      <point x="385.48809523809524" y="215.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.ArithmeticException" target="java.lang.RuntimeException">
+      <point x="0.0" y="-15.0" />
+      <point x="656.0" y="295.0" />
+      <point x="632.8214285714286" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.NullPointerException" target="java.lang.RuntimeException">
+      <point x="0.0" y="-15.0" />
+      <point x="840.0" y="295.0" />
+      <point x="682.1547619047619" y="295.0" />
+      <point x="49.33333333333334" y="15.0" />
+    </edge>
+    <edge source="java.lang.Error" target="java.lang.Throwable">
+      <point x="0.0" y="-15.0" />
+      <point x="900.75" y="135.0" />
+      <point x="596.7380952380952" y="135.0" />
+      <point x="24.75" y="15.0" />
+    </edge>
+    <edge source="java.lang.RuntimeException" target="java.lang.Exception">
+      <point x="0.0" y="-15.0" />
+      <point x="632.8214285714286" y="215.0" />
+      <point x="433.48809523809524" y="215.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.IndexOutOfBoundsException" target="java.lang.RuntimeException">
+      <point x="0.0" y="-15.0" />
+      <point x="447.5" y="295.0" />
+      <point x="583.4880952380952" y="295.0" />
+      <point x="-49.33333333333334" y="15.0" />
+    </edge>
+    <edge source="java.lang.Exception" target="java.lang.Throwable">
+      <point x="0.0" y="-15.0" />
+      <point x="409.48809523809524" y="135.0" />
+      <point x="547.2380952380952" y="135.0" />
+      <point x="-24.75" y="15.0" />
+    </edge>
+    <edge source="java.awt.AWTError" target="java.lang.Error">
+      <point x="0.0" y="-15.0" />
+      <point x="949.8214285714286" y="215.0" />
+      <point x="916.75" y="215.0" />
+      <point x="16.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.VirtualMachineError" target="java.lang.Error">
+      <point x="0.0" y="-15.0" />
+      <point x="805.3214285714286" y="215.0" />
+      <point x="884.75" y="215.0" />
+      <point x="-16.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="498.0" y="215.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
