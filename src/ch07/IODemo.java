@@ -7,7 +7,6 @@ import java.util.Date;
 
 public class IODemo {
     public static final int ARRAY_SIZE = 128;
-
     public static PrintStream printStream;
 
     public static void main(String[] args) throws IOException {
@@ -71,7 +70,6 @@ public class IODemo {
         printStream.println("Starting copying without buffer...");
         copyStream(new FileInputStream(from), new FileOutputStream(to));
         Date d2 = new Date();
-
         printStream.println("No buffer copying, time consuming(ms):" + (d2.getTime() - d1.getTime()));
         printStream.println();
 
@@ -81,7 +79,6 @@ public class IODemo {
         printStream.println("Starting copying by buffer...");
         copyStream(new BufferedInputStream(new FileInputStream(from), bufferSize), new BufferedOutputStream(new FileOutputStream(to), bufferSize));
         d2 = new Date();
-
         printStream.println("Use buffer copying, time consuming(ms):" + (d2.getTime() - d1.getTime()));
 
         printStream.printf("Copy file from \"%s\" to \"%s\" finished.\n", from, to);
