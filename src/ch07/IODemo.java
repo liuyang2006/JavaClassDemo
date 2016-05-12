@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class IODemo {
     public static final int ARRAY_SIZE = 128;
+
     public static PrintStream printStream;
 
     public static void main(String[] args) throws IOException {
