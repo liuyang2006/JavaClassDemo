@@ -18,36 +18,51 @@ public class IODemo {
         String from = "test.txt";
         String to = "after-copyied.txt";
 
+        //===================
+        printStream.printf("\nStart \"copyFile\" to copy file from %s to %s\n", from, to);
         copyFile(from, to);
 
+        //===================
+        printStream.printf("\nStart \"copyStream\" to copy file from %s to %s\n", from, to);
         copyStream(new FileInputStream(from), new FileOutputStream(to));
         printStream.printf("Copy file from \"%s\" to \"%s\" finished.\n", from, to);
 
+        //===================
+        printStream.printf("\nStart \"getBytes\" from file %s and convert bytes[] to String and output it.\n", from);
         ByteArrayOutputStream byteArrayOutputStream = getBytes(new FileInputStream(from));
-
-        String fileContent = byteArrayOutputStream.toString();
+        String fileContent = byteArrayOutputStream.toString("utf-8");
         printStream.println("fileContent is as follows:\n" + fileContent);
-        printStream.println("=== end of file ===\n");
+        printStream.println("=== output end of file ===\n");
 
+        //===================
+        printStream.printf("\nStart \"copyStream\" from internet connection to http://www.zzu.edu.cn.\n");
         String urlStr = "http://www.zzu.edu.cn";
         URL url = new URL(urlStr);
 //        copyStream(url.openStream(), new FileOutputStream("zzu-homepage.html"));
         copyStream(url.openStream(), printStream);
 
+        //===================
+        printStream.printf("\nStart \"copyStream\" from internet connection to http://www.zzu.edu.cn/images/logo.png.\n");
         urlStr = "http://www.zzu.edu.cn/images/logo.png";
         url = new URL(urlStr);
         copyStream(url.openStream(), new FileOutputStream("zzulogo.png"));
-        Runtime.getRuntime().exec("open zzulogo.png");
+//        Runtime.getRuntime().exec("open zzulogo.png");
 
+        //===================
+        printStream.printf("\nStart \"copyStreamWithEncoding\" from internet connection to http://news.zzu.edu.cn and convert to correct encoding output.\n");
         url = new URL("http://news.zzu.edu.cn");
 //        copyStream(url.openStream(), printStream);
 //        copyCharacterBasedStream(new InputStreamReader(url.openStream(), "gb2312"), new PrintWriter(printStream));
         copyStreamWithEncoding(url.openStream(), "gb2312", printStream, "utf-8");
-        
-        System.exit(0);
 
+//        System.exit(0);
+
+        //===================
+        printStream.printf("\nStart \"encodeingConverter\" convert file %s with %s to %s with %s.\n", from, "utf-8", to, "GBK");
         encodeingConverter(new FileInputStream(from), "utf-8", new FileOutputStream(to), "GBK");
 
+        //===================
+        printStream.printf("\nStart big file manipulation.\n");
         // Big file manipulation
         from = "面向对象-ch01.ppt";
         to = "test-test.ppt";
@@ -85,9 +100,7 @@ public class IODemo {
             count++;
         }
         inputStreamReader.close();
-        outputStreamWriter.close();
         inputStream.close();
-        outputStream.close();
         printStream.printf("encodeingConverter:%d characters copyed from %s to %s.\n", count, inEncoding, outEncoding);
     }
 
@@ -104,7 +117,6 @@ public class IODemo {
         inputStream.close();
         byteArrayOutputStream.close();
         printStream.printf("getBytes:%d bytes got, using byte[%d] array.\n", count, ARRAY_SIZE);
-
         return byteArrayOutputStream;
     }
 
@@ -132,7 +144,6 @@ public class IODemo {
         }
         bufferedReader.close();
         printStream.printf("\nCopyied %d characters with BufferedReader/Writer from %s to %s encoding conversion.\n", count, inEncoding, outEncoding);
-        bufferedWriter.close();
     }
 
 
@@ -149,9 +160,7 @@ public class IODemo {
             count += len;
         }
         bufferedInputStream.close();
-        bufferedOutputStream.close();
         inputStream.close();
-        outputStream.close();
         printStream.printf("Copyied %d bytes with BufferedInput/OuputStream.\n", count);
     }
 
@@ -177,7 +186,6 @@ public class IODemo {
         inputStream.close();
         outputStream.flush();
         printStream.printf("Copyied %d bytes.\n", count);
-        outputStream.close();
     }
 
     public static void copyCharacterBasedStream(Reader reader, Writer writer) throws IOException {
@@ -192,7 +200,6 @@ public class IODemo {
         reader.close();
         writer.flush();
         printStream.printf("Copyied %d characters.\n", count);
-        writer.close();
     }
 
     /**
