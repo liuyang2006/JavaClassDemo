@@ -208,14 +208,14 @@ public class IODemo {
      * @deprecated This method is replaced by  <code>copyFileWithBuffer</code>.
      */
     @Deprecated
-    private static void copyFile(String from, String to) throws IOException {
+    public static void copyFile(String from, String to) throws IOException {
         Date d1 = new Date();
         copyStream(new FileInputStream(from), new FileOutputStream(to));
         Date d2 = new Date();
         printStream.printf("Copy file %s to %s used time is %d  (ms) successfully.\n", from, to, (d2.getTime() - d1.getTime()));
     }
 
-    private static void copyFileWithBuffer(String from, String to) throws IOException {
+    public static void copyFileWithBuffer(String from, String to) throws IOException {
         Date d1 = new Date();
         copyStreamWithBuffer(new FileInputStream(from), new FileOutputStream(to));
         Date d2 = new Date();
