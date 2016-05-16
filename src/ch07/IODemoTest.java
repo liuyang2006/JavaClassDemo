@@ -10,6 +10,7 @@ public class IODemoTest {
     @Before
     public void setUp() throws Exception {
         IODemo.printStream = System.out;
+        IODemo.printStream.println();
     }
 
     @Test

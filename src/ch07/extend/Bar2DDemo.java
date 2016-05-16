@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Hashtable;
 
-public class ZXingDemo {
+public class Bar2DDemo {
     public static final int width = 400, height = 400;
 
     public void encode(String contents, int width, int height, String imgPath) {
@@ -54,7 +54,7 @@ public class ZXingDemo {
             e.printStackTrace();
         }
 
-        ZXingDemo demo = new ZXingDemo();
+        Bar2DDemo demo = new Bar2DDemo();
 
         demo.encode(contents, width, height, imgPath);
         System.out.printf("生成二维码到文件%s成功！\n", imgPath);
