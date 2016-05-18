@@ -1,8 +1,7 @@
 package ch08;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class JFrameDemo {
     public static void main(String s[]) {
@@ -21,7 +20,7 @@ public class JFrameDemo {
 
         //显示窗口。
         frame.pack();
-        frame.setLocation(300,300);
+        frame.setLocation(300, 300);
         frame.setVisible(true);
     }
 }
