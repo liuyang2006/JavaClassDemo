@@ -20,19 +20,14 @@ public class ZZUNewsTableDemo extends JFrame {
     public ZZUNewsTableDemo() throws IOException {
         super("郑州大学主页新闻GUI Demo");
 
-//        setLayout(new FlowLayout());
-
         JPanel jPanel = new JPanel();
-
         jPanel.setLayout(new FlowLayout());
-
 
         JButton btnLoadData = new JButton("加载新闻");
         JButton btnClearData = new JButton("清除新闻");
 
         jPanel.add(btnLoadData);
         jPanel.add(btnClearData);
-
         add(jPanel, BorderLayout.NORTH);
 
         JTable table = new JTable();
@@ -55,14 +50,13 @@ public class ZZUNewsTableDemo extends JFrame {
                 }
             }
         });
-
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
 
         //表格常常放在滚动面板中。
         JScrollPane scrollPane = new JScrollPane(table);
 
         //将滚动面板放在窗口中。
-        ZZUNewsTableDemo.this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        add(scrollPane, BorderLayout.CENTER);
 
         btnLoadData.addActionListener(new ActionListener() {
             @Override
