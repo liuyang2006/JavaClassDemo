@@ -46,7 +46,7 @@ public class Bar2DDemo {
 
     public static void main(String[] args) throws IOException {
         String imgPath = "zzuie-qrcode.png";
-        String contents = "信息工程学院 http://www5.zzu.edu.cn/ie/";
+        String contents = "郑州大学信息工程学院 http://www5.zzu.edu.cn/ie/";
         try {
             // 如果不用更改源码，将字符串转换成ISO-8859-1编码
             contents = new String(contents.getBytes("UTF-8"), "ISO-8859-1");
@@ -58,6 +58,9 @@ public class Bar2DDemo {
 
         demo.encode(contents, width, height, imgPath);
         System.out.printf("生成二维码到文件%s成功！\n", imgPath);
+
+//        Runtime.getRuntime().exec("open " + imgPath);
+//        System.exit(0);
 
         String decodeContent = demo.decode(imgPath);
         System.out.printf("读取文件%s\n", imgPath);

@@ -3,7 +3,8 @@ package ch08;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class TableDemo extends JFrame {
     private boolean DEBUG = true;
@@ -42,11 +43,11 @@ public class TableDemo extends JFrame {
                         "计算机", new Integer(20), new Boolean(false)},
                 {"王大民", "200103", "男",
                         "计算机", new Integer(29), new Boolean(true)},
-                {"刘均", "200204","女",
+                {"刘均", "200204", "女",
                         "电子工程", new Integer(21), new Boolean(false)},
-                {"李力", "200208","女",
+                {"李力", "200208", "女",
                         "自动控制", new Integer(25), new Boolean(true)},
-                {"张爱军", "200301","男",
+                {"张爱军", "200301", "男",
                         "机械制造", new Integer(31), new Boolean(false)}
         };
 
@@ -62,6 +63,7 @@ public class TableDemo extends JFrame {
             return columnNames[col];
         }
 
+        @Override
         public Object getValueAt(int row, int col) {
             return data[row][col];
         }
@@ -113,9 +115,9 @@ public class TableDemo extends JFrame {
                 int numRows = getRowCount();
                 int numCols = getColumnCount();
 
-                for (int i=0; i < numRows; i++) {
+                for (int i = 0; i < numRows; i++) {
                     System.out.print("    row " + i + ":");
-                    for (int j=0; j < numCols; j++) {
+                    for (int j = 0; j < numCols; j++) {
                         System.out.print("  " + data[i][j]);
                     }
                     System.out.println();
@@ -129,7 +131,9 @@ public class TableDemo extends JFrame {
     public static void main(String[] args) {
         TableDemo frame = new TableDemo();
         frame.pack();
+        frame.setSize(500, 500);
         frame.setVisible(true);
+        frame.setLocation(200, 200);
     }
 }
 

@@ -15,12 +15,13 @@ public class JFrameDemo {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //创建一个JLable并加到窗口中。
-        JLabel emptyLabel = new JLabel("");
+        JLabel emptyLabel = new JLabel("Hello");
         emptyLabel.setPreferredSize(new Dimension(175, 100));
-        frame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
+        frame.add(emptyLabel, BorderLayout.CENTER);
 
         //显示窗口。
         frame.pack();
+        frame.setLocation(300,300);
         frame.setVisible(true);
     }
 }

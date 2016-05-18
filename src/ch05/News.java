@@ -2,7 +2,7 @@ package ch05;
 
 import java.io.Serializable;
 
-class News implements Serializable {
+public class News implements Serializable {
     private String date;
     private String title;
     private String href;
