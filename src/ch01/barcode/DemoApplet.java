@@ -39,7 +39,7 @@ import org.krysalis.barcode4j.BarcodeClassResolver;
 import org.krysalis.barcode4j.DefaultBarcodeClassResolver;
 
 /**
- * Demo Applet class
+ * FirstGUIDemo Applet class
  * 
  * @author Jeremias Maerki
  */

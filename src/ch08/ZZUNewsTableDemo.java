@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ZZUNewsTableDemo extends JFrame {
     public ZZUNewsTableDemo() throws IOException {
-        super("郑州大学主页新闻GUI Demo");
+        super("郑州大学主页新闻GUI FirstGUIDemo");
 
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new FlowLayout());

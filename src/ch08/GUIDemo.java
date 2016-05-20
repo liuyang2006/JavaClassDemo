@@ -17,9 +17,9 @@ public class GUIDemo {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Hello " + username.getText());
                 if (username.getText().equals("zzu"))
-                    JOptionPane.showMessageDialog(null, "Hello " + username.getText(), "Hello world", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "登陆成功。 Hello " + username.getText(), "Hello world", JOptionPane.INFORMATION_MESSAGE);
                 else
-                    JOptionPane.showMessageDialog(null, "Log in fail.", "Alert", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "登陆失败!", "Alert", JOptionPane.ERROR_MESSAGE);
             }
         });
         btn_cancel.addActionListener(new ActionListener() {
@@ -39,7 +39,7 @@ public class GUIDemo {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("GUI Demo");
+        JFrame frame = new JFrame("GUI FirstGUIDemo");
         frame.setContentPane(new GUIDemo().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setSize(400, 400);

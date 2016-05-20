@@ -1,8 +1,11 @@
 package ch08;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MultiListener extends JFrame implements ActionListener {
 
@@ -11,14 +14,12 @@ public class MultiListener extends JFrame implements ActionListener {
     JButton button1, button2;
 
     public MultiListener(String s) {
-        super( s);
+        super(s);
 
         JLabel l = null;
         GridBagLayout gridbag = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
-        setLayout(gridbag);   	//Frame设置为GridBagLayout布局管理器。
-
-
+        setLayout(gridbag);    //Frame设置为GridBagLayout布局管理器。
 
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth = GridBagConstraints.REMAINDER;
@@ -82,13 +83,13 @@ public class MultiListener extends JFrame implements ActionListener {
     //第二个Button的监听器类。
     class Eavesdropper implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            bottomTextArea.append("OK,"+e.getActionCommand() + "\n");
+            bottomTextArea.append("OK," + e.getActionCommand() + "\n");
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        MultiListener  m=new MultiListener("Multilistener example" );
+        MultiListener m = new MultiListener("Multilistener example");
 
     }
 }

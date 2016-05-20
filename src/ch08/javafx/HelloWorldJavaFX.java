@@ -1,4 +1,4 @@
-package ch08;
+package ch08.javafx;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

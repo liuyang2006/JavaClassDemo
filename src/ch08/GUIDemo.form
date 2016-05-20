@@ -35,7 +35,7 @@
         </constraints>
         <properties>
           <font/>
-          <text value="请输入用户名密码登陆"/>
+          <text value="请输入用户名密码登陆系统"/>
         </properties>
       </component>
       <component id="d9407" class="javax.swing.JLabel">
