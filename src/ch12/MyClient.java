@@ -1,14 +1,13 @@
 package ch12;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class MyClient {
     public static final String serverIP = MultiClientServer.serverIP;
     public static final int serverPort = MultiClientServer.serverPort;
+
+    static Integer clientID;
 
     public static void main(String args[]) {
         try {
@@ -26,11 +25,11 @@ public class MyClient {
 
                         String s = "";
                         do {
-                            System.out.printf("Info:");
                             s = sin.readLine();
                             out.println(s);
                             out.flush();
                             System.out.printf("Send %s to server %s ok.\n", s, socket);
+                            System.out.printf("Info[%d]:", clientID);
                         } while (!s.equals("88"));
                         System.out.println("The connection is closed.");
                     } catch (IOException e) {
@@ -41,6 +40,18 @@ public class MyClient {
             });
 
             handleUserInput.start();
+
+
+            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+            Object obj = ois.readObject();
+
+            if (obj instanceof Integer) {
+                clientID = (Integer) obj;
+                System.out.printf("clientID = %s\n", clientID);
+                System.out.printf("Info[%d]:", clientID);
+            } else {
+                throw new IllegalStateException("Receiving non-client obj.");
+            }
 
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
@@ -53,7 +64,7 @@ public class MyClient {
                     break;
                 }
                 System.out.println("\n@ Server response:  " + serverInfo);
-                System.out.print("Info:");
+                System.out.printf("Info[%d]:", clientID);
             }
             in.close();
             socket.close();

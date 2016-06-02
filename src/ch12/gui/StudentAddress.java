@@ -35,4 +35,15 @@ public class StudentAddress implements java.io.Serializable {
   public String getZip() {
     return zip;
   }
+
+  @Override
+  public String toString() {
+    return "StudentAddress{" +
+            "name='" + name + '\'' +
+            ", street='" + street + '\'' +
+            ", city='" + city + '\'' +
+            ", state='" + state + '\'' +
+            ", zip='" + zip + '\'' +
+            '}';
+  }
 }

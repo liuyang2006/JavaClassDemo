@@ -1,28 +1,43 @@
 package ch12;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+class Client implements Serializable {
+    public Socket clientSocket;
+    public Integer clientID;
+
+    public Client(Socket soc, Integer id) {
+        clientSocket = soc;
+        clientID = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientSocket=" + clientSocket +
+                ", clientID=" + clientID +
+                '}';
+    }
+}
+
 public class MultiClientServer implements Runnable {
     public static final String serverIP = "127.0.0.1";
     public static final int serverPort = 1680;
     public static final int maxClientNum = 100;
 
-    static List<Socket> clients = Collections.synchronizedList(new ArrayList<Socket>());
+    static List<Client> clients = Collections.synchronizedList(new ArrayList<Client>());
 
-    int clientNo;
-    Socket socket;
+    //    int clientNo;
+//    Socket socket;
+    Client client;
 
-    public MultiClientServer(Socket ss, int no) {
-        socket = ss;
-        clientNo = no;
+    public MultiClientServer(Client client) {
+        this.client = client;
     }
 
     public static void main(String args[]) {
@@ -44,15 +59,15 @@ public class MultiClientServer implements Runnable {
                             if (serverMessage.equals("l")) {
                                 System.out.printf("There are %d clients:\n", clients.size());
                                 synchronized (clients) {
-                                    for (Socket cl : clients) {
+                                    for (Client cl : clients) {
                                         System.out.println(cl);
                                     }
                                 }
                                 continue;
                             }
                             synchronized (clients) {
-                                for (Socket cl : clients) {
-                                    PrintWriter out = new PrintWriter(cl.getOutputStream());
+                                for (Client cl : clients) {
+                                    PrintWriter out = new PrintWriter(cl.clientSocket.getOutputStream());
                                     out.println(serverMessage);
                                     out.flush();
                                     System.out.printf("Sending message %s to Client %s ok.\n", serverMessage, cl);
@@ -62,8 +77,8 @@ public class MultiClientServer implements Runnable {
 
                                 //close client socket
                                 synchronized (clients) {
-                                    for (Socket cl : clients) {
-                                        cl.close();
+                                    for (Client cl : clients) {
+                                        cl.clientSocket.close();
                                     }
                                 }
                                 break;
@@ -83,12 +98,14 @@ public class MultiClientServer implements Runnable {
             });
             handleServerUserInput.start();
 
+            int currentID = 0;
             while (clients.size() < maxClientNum) {
                 Socket clientSocket = serverSocket.accept();
-                clients.add(clientSocket);
+                Client client = new Client(clientSocket, currentID++);
+                clients.add(client);
                 System.out.printf("\nClient %s no. %d is connected.\n", clientSocket, clients.size() - 1);
                 System.out.print("\nSInfo:");
-                Thread t = new Thread(new MultiClientServer(clientSocket, clients.size() - 1));
+                Thread t = new Thread(new MultiClientServer(client));
                 t.start();
             }
         } catch (Exception e) {
@@ -100,26 +117,31 @@ public class MultiClientServer implements Runnable {
 
     public void run() {
         try {
+
+            ObjectOutputStream oos = new ObjectOutputStream(client.clientSocket.getOutputStream());
+            oos.writeObject(client.clientID);
+            oos.flush();
+
             BufferedReader socketIn = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
+                    new InputStreamReader(client.clientSocket.getInputStream()));
 
             String s;
             while (!(s = socketIn.readLine()).equals("88")) {
-                System.out.println("# Received message from Client No." + clientNo + ": " + s);
+                System.out.println("# Received message from Client No." + client.clientID + ": " + s);
                 System.out.print("SInfo:");
             }
             System.out.println("The connection to Client No." +
-                    clientNo + " is closing... ... ");
+                    client.clientID + " is closing... ... ");
 
             socketIn.close();
-            socket.close();
+            client.clientSocket.close();
 
         } catch (Exception e) {
 //            e.printStackTrace();
 //            System.out.println("Error:" + e);
         } finally {
-            clients.remove(socket);
-            System.out.printf("Client %d is closed successfully.\n", clientNo);
+            clients.remove(client);
+            System.out.printf("Client %d is closed successfully.\n", client.clientID);
             System.out.printf("SInfo:");
         }
 
