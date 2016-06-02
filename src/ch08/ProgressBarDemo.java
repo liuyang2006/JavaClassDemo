@@ -48,6 +48,19 @@ public class ProgressBarDemo extends JApplet {
         });
     }
 
+    public static void main(String[] args) {
+        ProgressBarDemo applet = new ProgressBarDemo();
+        JFrame frame = new JFrame();
+        frame.setTitle("ProgressBarDemo");
+        frame.getContentPane().add(applet, BorderLayout.CENTER);
+        applet.init();
+        applet.start();
+        frame.setSize(400, 200);
+        frame.setLocationRelativeTo(null); // Center the frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+
     /**
      * Task class for SwingWorker
      */
@@ -61,6 +74,19 @@ public class ProgressBarDemo extends JApplet {
         public ComputePrime(int count, JTextArea result) {
             this.count = count;
             this.result = result;
+        }
+
+        /**
+         * Check whether number is prime
+         */
+        private static boolean isPrime(int number) {
+            for (int divisor = 2; divisor <= number / 2; divisor++) {
+                if (number % divisor == 0) { // If true, number is not prime
+                    return false; // number is not a prime
+                }
+            }
+
+            return true; // number is prime
         }
 
         /**
@@ -100,31 +126,5 @@ public class ProgressBarDemo extends JApplet {
                 number++;
             }
         }
-
-        /**
-         * Check whether number is prime
-         */
-        private static boolean isPrime(int number) {
-            for (int divisor = 2; divisor <= number / 2; divisor++) {
-                if (number % divisor == 0) { // If true, number is not prime
-                    return false; // number is not a prime
-                }
-            }
-
-            return true; // number is prime
-        }
-    }
-
-    public static void main(String[] args) {
-        ProgressBarDemo applet = new ProgressBarDemo();
-        JFrame frame = new JFrame();
-        frame.setTitle("ProgressBarDemo");
-        frame.getContentPane().add(applet, BorderLayout.CENTER);
-        applet.init();
-        applet.start();
-        frame.setSize(400, 200);
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
     }
 }

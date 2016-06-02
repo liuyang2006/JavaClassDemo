@@ -15,11 +15,20 @@ public class TaskThreadDemo {
 //        thread1.setPriority(Thread.MIN_PRIORITY);
 //        thread2.setPriority(Thread.MIN_PRIORITY);
 //        thread3.setPriority(Thread.MAX_PRIORITY);
+        thread1.setName("printA 100 times");
+        thread2.setName("printB 100 times");
+        thread3.setName("print100");
+
+        System.out.println(Thread.currentThread());
 
         // Start threads
         thread1.start();
         thread2.start();
         thread3.start();
+
+        System.out.println("exit of main thread");
+        return;
+
     }
 }
 
@@ -42,9 +51,10 @@ class PrintChar implements Runnable {
      * what the task to perform
      */
     public void run() {
+        System.out.println(Thread.currentThread());
         for (int i = 0; i < times; i++) {
             System.out.print(charToPrint + " ");
-//            Thread.yield();
+            Thread.yield();
         }
     }
 }
@@ -64,9 +74,10 @@ class PrintNum implements Runnable {
      * Tell the thread how to run
      */
     public void run() {
+        System.out.println(Thread.currentThread());
         for (int i = 1; i <= lastNum; i++) {
-            System.out.print(" " + i);
-//            Thread.yield();
+            System.out.print(i + " ");
+            Thread.yield();
         }
     }
 }

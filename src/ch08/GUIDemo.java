@@ -15,7 +15,7 @@ public class GUIDemo {
         btn_login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hello " + username.getText());
+                System.out.println("登录用户名:" + username.getText());
                 if (username.getText().equals("zzu"))
                     JOptionPane.showMessageDialog(null, "登陆成功。 Hello " + username.getText(), "Hello world", JOptionPane.INFORMATION_MESSAGE);
                 else
@@ -30,22 +30,16 @@ public class GUIDemo {
                 password.setText("");
             }
         });
-        btn_cancel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("GUI FirstGUIDemo");
         frame.setContentPane(new GUIDemo().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.setSize(400, 400);
         frame.pack();
-        frame.setVisible(true);
         frame.setLocation(400, 300);
+        frame.setVisible(true);
     }
 
 }

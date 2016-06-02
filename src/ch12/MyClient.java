@@ -1,45 +1,74 @@
 package ch12;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
-public class MyClient{
-	public static void main (String args[]){
-		try{
-			Socket socket = new Socket("127.0.0.1",1680);  //������������
-			
-			//���ӽ�����ͨ��Socket��ȡ�����ϵ�����/�������
-			PrintWriter out = new PrintWriter(socket.getOutputStream());
-			BufferedReader in = new BufferedReader(
-									new InputStreamReader (socket.getInputStream()));
-			
-			//������׼���������Ӽ��̽������ݡ�
-			BufferedReader sin = new BufferedReader(
-									new InputStreamReader (System.in));
-			
-			//�ӱ�׼�����ж�ȡһ�У�����Server�ˣ����û�����byeʱ�������ӡ�
-			String s;
-			do{
-				s=sin.readLine();
-				out.println(s);
-				out.flush();
-				if (!s.equals("bye")){
-					System.out.println("@ Server response:  "+in.readLine());
-				}
-				else{
-					System.out.println("The connection is closing... ... "); 
-				}
-				
-			}while(!s.equals("bye"));
+public class MyClient {
+    public static final String serverIP = MultiClientServer.serverIP;
+    public static final int serverPort = MultiClientServer.serverPort;
 
-			//�ر����ӡ�
-			out.close();
-			in.close();
-			socket.close();
+    public static void main(String args[]) {
+        try {
+            final Socket socket = new Socket(serverIP, serverPort);
 
-		}catch (Exception e) {
-			System.out.println("Error"+e);
-		}	
-	}
+            System.out.printf("Client connected to server %s:%d ok.\n", serverIP, serverPort);
+            Thread handleUserInput = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    PrintWriter out = null;
+                    try {
+                        out = new PrintWriter(socket.getOutputStream());
+                        BufferedReader sin = new BufferedReader(
+                                new InputStreamReader(System.in));
+
+                        String s = "";
+                        do {
+                            System.out.printf("Info:");
+                            s = sin.readLine();
+                            out.println(s);
+                            out.flush();
+                            System.out.printf("Send %s to server %s ok.\n", s, socket);
+                        } while (!s.equals("88"));
+                        System.out.println("The connection is closed.");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
+            handleUserInput.start();
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream()));
+            while (true) {
+                String serverInfo = in.readLine();
+                if (serverInfo == null)
+                    break;
+                if (serverInfo.equals("88")) {
+                    System.out.println("Receiving server is end.");
+                    break;
+                }
+                System.out.println("\n@ Server response:  " + serverInfo);
+                System.out.print("Info:");
+            }
+            in.close();
+            socket.close();
+
+            handleUserInput.stop();
+//            System.out.println("Interrupt");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error" + e);
+        } finally {
+            System.out.println("Client is over.");
+            System.exit(0);
+        }
+
+    }
 }
 

@@ -1,7 +1,5 @@
 package ch11;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -11,10 +9,10 @@ public class ConsumerProducer {
 
     public static void main(String[] args) {
         // Create a thread pool with two threads
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-        executor.execute(new ProducerTask());
-        executor.execute(new ConsumerTask());
-        executor.shutdown();
+        Thread producer = new Thread(new ProducerTask());
+        Thread consumer = new Thread(new ConsumerTask());
+        producer.start();
+        consumer.start();
     }
 
     // A task for adding an int to the buffer
@@ -26,7 +24,7 @@ public class ConsumerProducer {
                     System.out.println("Producer writes " + i);
                     buffer.write(i++); // Add a value to the buffer
                     // Put the thread into sleep
-                    Thread.sleep((int) (Math.random() * 10000));
+                    Thread.sleep((int) (Math.random() * 1000));
                 }
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
@@ -41,7 +39,7 @@ public class ConsumerProducer {
                 while (true) {
                     System.out.println("\t\t\tConsumer reads " + buffer.read());
                     // Put the thread into sleep
-                    Thread.sleep((int) (Math.random() * 10000));
+                    Thread.sleep((int) (Math.random() * 1000));
                 }
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
@@ -51,7 +49,7 @@ public class ConsumerProducer {
 
     // An inner class for buffer
     private static class Buffer {
-        private static final int CAPACITY = 1; // buffer size
+        private static final int CAPACITY = 3; // buffer size
         private java.util.LinkedList<Integer> queue =
                 new java.util.LinkedList<Integer>();
 

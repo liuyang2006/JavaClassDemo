@@ -46,7 +46,7 @@ public class CopyFileWithProgressDemo extends JFrame {
 
         jbtCopy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Exercise27_14Task task = new Exercise27_14Task();
+                CopyFileTask task = new CopyFileTask();
 
                 task.addPropertyChangeListener(new PropertyChangeListener() {
                     public void propertyChange(PropertyChangeEvent e) {
@@ -71,7 +71,7 @@ public class CopyFileWithProgressDemo extends JFrame {
     }
 
     // Copy file and update progress bar in a separate thread
-    class Exercise27_14Task extends SwingWorker<Integer, Object> {
+    class CopyFileTask extends SwingWorker<Integer, Object> {
         private int currentValue;
 
         /**

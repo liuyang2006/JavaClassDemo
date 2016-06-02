@@ -61,14 +61,14 @@ public class SwingWorkerDemo extends JApplet {
     }
 
     /**
-     * Task class for SwingWorker
+     * TaskCallable class for SwingWorker
      */
     static class ComputePrime extends SwingWorker<Integer, Object> {
         private int limit;
         private JTextField result; // Text field in the UI
 
         /**
-         * Construct a runnable Task
+         * Construct a runnable TaskCallable
          */
         public ComputePrime(int limit, JTextField result) {
             this.limit = limit;

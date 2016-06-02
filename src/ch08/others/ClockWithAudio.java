@@ -1,4 +1,4 @@
-package ch08;
+package ch08.others;
 
 import java.applet.*;
 import javax.swing.*;
